@@ -1,0 +1,18 @@
+---
+# tasks file for ansible-role-raspberry-lan
+
+- import_tasks: rsyslog.yml
+  tags:
+  - rsyslog
+
+- import_tasks: apt.yml
+  tags:
+  - apt
+
+- import_tasks: unattended-upgrades.yml
+  tags:
+  - apt
+
+- import_tasks: user.yml
+  tags:
+  - security

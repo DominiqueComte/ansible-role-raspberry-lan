@@ -1,0 +1,17 @@
+---
+# defaults file for ansible-role-raspberry-lan
+
+# settings for apt task.
+#   URLs are the Nexus 3 APT mirror repositories set up for the Debian distribution. see README.
+#   format is : http://[nexus server]:[nexus port]/repository/[proxy repository name]/
+apt_main_mirror_url: changeme
+apt_archive_mirror_url: changeme
+
+# settings for unattended updates.
+unattended_upgrades_email_address: changeme@mailserver.local
+unattended_upgrades_auto_reboot: false
+
+# RSyslog settings.
+rsyslog_service: rsyslog
+rsyslog_server_hostname: changeme
+rsyslog_forward_rule_name: 00central_log_server.conf

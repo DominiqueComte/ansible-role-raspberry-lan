@@ -1,0 +1,12 @@
+---
+
+#- name: print the secure variable
+#  debug:
+#    var: new_pi_password
+
+- name: Change user password
+  user:
+    name: pi
+    update_password: always
+    password: "{{ new_pi_password | password_hash('sha512') }}"
+  when: new_pi_password is defined

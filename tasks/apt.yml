@@ -1,0 +1,36 @@
+---
+
+- name: Add main repository mirror into sources list
+  apt_repository:
+    repo: deb {{ apt_main_mirror_url }} buster main contrib non-free rpi
+    state: present
+  when: apt_main_mirror_url != "changeme"
+
+- name: Remove main repository from sources list
+  apt_repository:
+    repo: deb http://raspbian.raspberrypi.org/raspbian/ buster main contrib non-free rpi
+    state: absent
+  when: apt_main_mirror_url != "changeme"
+
+- name: Add archive repository mirror into sources list
+  apt_repository:
+    repo: deb {{ apt_archive_mirror_url }} buster main
+    state: present
+  when: apt_archive_mirror_url != "changeme"
+
+- name: Remove archive repository from sources list
+  apt_repository:
+    repo: deb http://archive.raspberrypi.org/debian/ buster main
+    state: absent
+  when: apt_archive_mirror_url != "changeme"
+
+- name: apt-get update
+  apt:
+    update_cache: yes
+
+- name: install software
+  apt:
+    pkg:
+    - screen
+    - neofetch
+    - htop
