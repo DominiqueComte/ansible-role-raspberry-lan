@@ -28,15 +28,15 @@
   apt:
     update_cache: yes
 
+- name: upgrade packages
+  apt:
+    upgrade: "yes"
+    autoremove: yes
+    autoclean: yes
+
 - name: install software
   apt:
     pkg:
     - screen
     - neofetch
     - htop
-
-- name: update packages
-  apt:
-    upgrade: yes
-    autoremove: yes
-    autoclean: yes
