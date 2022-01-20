@@ -15,3 +15,4 @@ unattended_upgrades_auto_reboot: false
 rsyslog_service: rsyslog
 rsyslog_server_hostname: changeme
 rsyslog_forward_rule_name: 00central_log_server.conf
+rsyslog_remote_port: 514

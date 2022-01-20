@@ -1,2 +1,2 @@
-{{ ansible_managed }}
-*.* @@{{ rsyslog_server_hostname }}:514
+{{ ansible_managed | comment }}
+*.* @@{{ rsyslog_server_hostname }}:{{ rsyslog_remote_port }}
